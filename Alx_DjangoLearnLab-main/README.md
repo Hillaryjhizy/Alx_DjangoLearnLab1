@@ -1,1 +1,0 @@
-# LAbs for Django Projects

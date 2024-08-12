@@ -1,1 +1,1 @@
-# Tasks for Intro to Django
+Tasks for Intro to Django

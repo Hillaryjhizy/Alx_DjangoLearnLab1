@@ -1,36 +1,67 @@
-## CRUD OPERATIONS
+# Create a Book Instance
 
-```from bookshelf.models import Book```
+````python
+from bookshelf.models import Book
 
-### Create Book
+# Create a Book instance
+book = Book.objects.create(title="1984", author="George Orwell", publication_year=1949)
+print(book)
 
-```py
-book = Book.objects.create(title="The gods are not to blame", author="Ola Rotimi",publication_year=2005)
-```
+# Expected Output
+<Book: 1984>
 
-output:
-```sh
-<Book: Book object (4)>
-```
+### `retrieve.md`
 
-### Retrieve Book
+```markdown
+# Retrieve the Book Instance
 
-```py
-Book.objects.get(title="1984")
-```
-### Update Book
+```python
+from bookshelf.models import Book
 
-```py
-book.title = “Nineteen Eighty-Four”
+# Retrieve the book you created
+book = Book.objects.get(id=1)
+print(book)
+
+# Expected Output
+<Book: 1984>
+
+### `update.md`
+
+```markdown
+# Update the Book Title
+
+```python
+from bookshelf.models import Book
+
+# Retrieve the book you created
+book = Book.objects.get(id=1)
+
+# Update the title of the created book
+book.title = "Nineteen Eighty-Four"
 book.save()
-```
+print(book)
 
-### Delete Book
-```py
+# Expected Output
+<Book: Nineteen Eighty-Four>
+
+### `delete.md`
+
+```markdown
+# Delete the Book Instance
+
+```python
+from bookshelf.models import Book
+
+# Retrieve the book you created
+book = Book.objects.get(id=1)
+
+# Delete the book instance
 book.delete()
-```
-output:
-```sh
-output:
-(1, {'bookshelf.Book': 1})
-```
+
+# Try to retrieve all books again to confirm deletion
+books = Book.objects.all()
+print(books)
+
+# Expected Output
+[]
+````

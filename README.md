@@ -1,1 +1,1 @@
-This is a lab for Django projects
+This is a lab for Django projects 

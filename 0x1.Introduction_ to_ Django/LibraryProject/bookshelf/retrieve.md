@@ -1,4 +1,3 @@
-
 ### `retrieve.md`
 
 ```markdown
